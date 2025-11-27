@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jerry Mulbah – Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  
+}
+
+body{
+  font-family:"Poppins",sans-serif;
+  background:#070d18;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAV */
+header{
+  background:rgba(255,255,255,.05);
+  padding:18px;
+  backdrop-filter:blur(8px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  
+  
+  
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  
+}
+
+nav a{
+  color:#81fff5;
+  text-decoration:none;
+  font-weight:600;
+  font-size:1rem;
+  padding:8px 10px;
+  border-radius:5px;
+  transition:.3s;
+  
+  
+}
+nav a:hover{
+  background:#00ffe1;
+  color:#000;
+}
+
+/* HERO */
+.hero{
+  padding:70px 20px;
+  text-align:center;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  
+}
+
+.hero img{
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  border:4px solid #00ffe1;
+  box-shadow:0 0 35px #00ffe1;
+  cursor:pointer;
+  transition:.4s;
+  
+
+}
+.hero img:hover{
+  transform:scale(1.05);
+}
+
+.hero h1{
+  margin-top:20px;
+  font-size:2.3rem;
+}
+
+.hero p{
+  opacity:.75;
+}
+
+/* TITLE */
+.section-title{
+  text-align:center;
+  font-size:2rem;
+  margin:40px 0 10px;
+}
+
+/* GRID SECTIONS */
+.grid{
+  display:grid;
+  gap:25px;
+  padding:25px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  margin: 100vh;
+  margin-inline-start: auto;
+  inline-size: 100;
+}
+
+.card{
+  background:rgba(255,255,255,0.06);
+  padding:25px;
+  border-radius:15px;
+  backdrop-filter:blur(10px);
+  border-left:4px solid #00ffe5;
+  box-shadow:0 0 20px rgba(0,255,255,.1);
+  animation:fadeUp .7s ease;
+  
+  
+  
+
+}
+.card h3{
+  color:#7efff7;
+  margin-bottom:10px;
+  
+  
+}
+
+/* CONTACT FORM */
+form{
+  max-width:420px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+
+  
+  
+  
+}
+
+input,textarea{
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:#132033;
+  color:white;
+}
+
+button{
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.3s;
+}
+
+.btn-primary{
+  background:#00ffe9;
+  color:#000;
+}
+.btn-primary:hover{
+  transform:scale(1.05);
+}
+
+.btn-secondary{
+  background:#233042;
+  color:#fff;
+}
+
+/* MODALS */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  place-items:center;
+  z-index:200;
+}
+.modal-box{
+  width:85%;
+  max-width:380px;
+  background:#14202f;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+  animation:fade .35s ease;
+  
+}
+
+/* ANIMATIONS */
+@keyframes fade{
+  from{opacity:0;transform:scale(.7);}
+  to{opacity:1;transform:scale(1);}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* FOOTER */
+footer{
+  background:#0c1526;
+  padding:15px;
+  text-align:center;
+  opacity:.7;
+  margin-top:40px;
+  
+}
+
+html{
+  scroll-behavior:smooth;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#Portfolio">Portfolio</a>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <img src="Home.jpg" id="profilePhoto">
+  <h1>Jerry Mulbah</h1>
+  <p>Creative Frontend Developer & UI Designer</p>
+</section>
+
+<!-- PHOTO POPUP -->
+<div class="modal" id="photoModal">
+  <div class="modal-box">
+    <h2>About Jerry</h2>
+    <p>I’m Jerry Mulbah from Liberia. I build modern, clean and animated websites with great user experiences.</p>
+    <button class="btn-secondary" id="closePhoto">Close</button>
+  </div>
+</div>
+
+<h2 class="section-title">About Me</h2>
+<section id="about" class="grid">
+  <div class="card">
+    <h3>Who I Am</h3>
+    <p>A young developer focused on modern UI, creativity and smooth interface animations.</p>
+  </div>
+
+  <div class="card">
+    <h3>Skills</h3>
+    <p>HTML & CSS</p>
+    <p>JavaScript</p>
+    <p>Flexbox & Grid</p>
+    <p>UI/UX Design</p>
+  </div>
+
+  <div class="card">
+    <h3>Goal</h3>
+    <p>To become a full-stack developer and create top-class digital experiences.</p>
+  </div>
+</section>
+
+<h2 class="section-title">Contact Me</h2>
+<section id="contact" style="padding:20px;">
+  <form id="contactForm">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Message" required></textarea>
+    <button class="btn-primary">Send Message</button>
+  </form>
+
+  <div class="modal" id="confirmModal">
+    <div class="modal-box">
+      <h3>Submit form?</h3>
+      <p>Are you sure you want to send this message?</p>
+      <button class="btn-primary" id="yesSubmit">Yes</button>
+      <button class="btn-secondary" id="noSubmit">No</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 — Built by Jerry Mulbah
+</footer>
+
+<script>
+document.getElementById("profilePhoto").onclick=()=>{
+  document.getElementById("photoModal").style.display="grid";
+};
+document.getElementById("closePhoto").onclick=()=>{
+  document.getElementById("photoModal").style.display="none";
+};
+
+const form=document.getElementById("contactForm");
+const confirmModal=document.getElementById("confirmModal");
+
+form.onsubmit=(e)=>{
+  e.preventDefault();
+  confirmModal.style.display="grid";
+};
+
+document.getElementById("noSubmit").onclick=()=>{
+  confirmModal.style.display="none";
+};
+
+document.getElementById("yesSubmit").onclick=()=>{
+  confirmModal.style.display="none";
+  alert("Message sent!");
+  form.reset();
+};
+</script>
+
+</body>
+</html>
